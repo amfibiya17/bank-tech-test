@@ -29,4 +29,15 @@ describe('BankAccount', () => {
       expect(bankAccount.seeAccountBalance()).toEqual(15);
     });
   });
+
+  describe('withdrawMoney function', () => {
+    it('should withdraw money from account balance', () => {
+      bankAccount.putMoney(10);
+      bankAccount.putMoney(5);
+      bankAccount.seeAccountBalance(15);
+      bankAccount.withdrawMoney(2);
+
+      expect(bankAccount.seeAccountBalance()).toEqual(13);
+    });
+  });
 });
