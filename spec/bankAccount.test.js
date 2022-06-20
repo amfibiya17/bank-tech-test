@@ -1,7 +1,16 @@
+const timekeeper = require('timekeeper');
+
 const BankAccount = require('../src/bankAccount.js');
 
 describe('BankAccount', () => {
   let bankAccount;
+
+  beforeAll(() => {
+    timekeeper.freeze(new Date('2022-01-14'));
+  });
+  afterAll(() => {
+    timekeeper.reset();
+  });
 
   beforeEach(() => {
     bankAccount = new BankAccount();
@@ -12,32 +21,69 @@ describe('BankAccount', () => {
   });
 
   describe('putMoney function', () => {
-    it('should put money to transactions array', () => {
+    it('should put money to transactions array with the time transaction was made', () => {
       bankAccount.putMoney(10);
-      bankAccount.putMoney(5);
 
-      expect(bankAccount.transactions).toEqual([10, 5]);
+      expect(bankAccount.transactions).toEqual([
+        {
+          date: new Date(),
+          credit: 0,
+          debit: 10,
+          balance: 10,
+        },
+      ]);
     });
   });
 
   describe('seeAccountBalance function', () => {
-    it('should return account balance as integer', () => {
+    it('should return account balance', () => {
       bankAccount.putMoney(10);
       bankAccount.putMoney(5);
-      bankAccount.transactions = [10, 5];
+      bankAccount.withdrawMoney(2);
+      bankAccount.transactions = [
+        {
+          date: new Date(),
+          credit: 0,
+          debit: 5,
+          balance: 5,
+        },
+        {
+          date: new Date(),
+          credit: 0,
+          debit: 10,
+          balance: 15,
+        },
+        {
+          date: new Date(),
+          credit: 2,
+          debit: 0,
+          balance: 13,
+        },
+      ];
 
-      expect(bankAccount.seeAccountBalance()).toEqual(15);
+      expect(bankAccount.seeAccountBalance()).toEqual(13);
     });
   });
 
   describe('withdrawMoney function', () => {
-    it('should withdraw money from account balance', () => {
+    it('should withdraw money from account balance with the time transaction was made', () => {
       bankAccount.putMoney(10);
-      bankAccount.putMoney(5);
-      bankAccount.seeAccountBalance(15);
       bankAccount.withdrawMoney(2);
 
-      expect(bankAccount.seeAccountBalance()).toEqual(13);
+      expect(bankAccount.transactions).toEqual([
+        {
+          date: new Date(),
+          credit: 0,
+          debit: 10,
+          balance: 10,
+        },
+        {
+          date: new Date(),
+          credit: 2,
+          debit: 0,
+          balance: 8,
+        },
+      ]);
     });
   });
 });
