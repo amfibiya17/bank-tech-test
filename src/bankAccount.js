@@ -1,6 +1,10 @@
 class BankAccount {
   constructor() {
-    this.accountBalance = [];
+    this.transactions = [];
+  }
+
+  putMoney(amount) {
+    this.transactions.push(amount);
   }
 }
 
