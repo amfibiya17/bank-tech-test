@@ -15,7 +15,18 @@ describe('BankAccount', () => {
     it('should put money to transactions array', () => {
       bankAccount.putMoney(10);
       bankAccount.putMoney(5);
+
       expect(bankAccount.transactions).toEqual([10, 5]);
+    });
+  });
+
+  describe('seeAccountBalance function', () => {
+    it('should return account balance as integer', () => {
+      bankAccount.putMoney(10);
+      bankAccount.putMoney(5);
+      bankAccount.transactions = [10, 5];
+
+      expect(bankAccount.seeAccountBalance()).toEqual(15);
     });
   });
 });
