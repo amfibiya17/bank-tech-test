@@ -85,5 +85,23 @@ describe('BankAccount', () => {
         },
       ]);
     });
+
+    it('should raise an error when there are not enough funds in the account balance to withdraw', () => {
+      bankAccount.putMoney(10);
+      bankAccount.withdrawMoney(12);
+
+      expect(bankAccount.transactions).toEqual([
+        {
+          date: new Date(),
+          credit: 10,
+          debit: 0,
+          balance: 10,
+        }
+      ]);
+
+      expect(bankAccount.withdrawMoney(12)).toEqual(
+        `There are insufficient funds in your account. Please top up before proceeding. Available to withdraw 10.00.`
+      )
+    });
   });
 });

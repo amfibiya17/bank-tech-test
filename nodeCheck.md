@@ -10,11 +10,11 @@ const printer = new Printer(bank);
 console.log(bank.putMoney(5));
 console.log(bank.putMoney(15));
 
-console.log(bank.seeAccountBalance()); // <- 20
+console.log(bank.seeAccountBalance());
 
 console.log(bank.withdrawMoney(2));
 console.log(bank.withdrawMoney(2));
-console.log(bank.seeAccountBalance()); // <- 16
+console.log(bank.seeAccountBalance());
 
 console.log(printer.bankAccountSummary());
 ```
