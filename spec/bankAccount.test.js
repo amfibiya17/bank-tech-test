@@ -27,8 +27,8 @@ describe('BankAccount', () => {
       expect(bankAccount.transactions).toEqual([
         {
           date: new Date(),
-          credit: 0,
-          debit: 10,
+          credit: 10,
+          debit: 0,
           balance: 10,
         },
       ]);
@@ -43,20 +43,20 @@ describe('BankAccount', () => {
       bankAccount.transactions = [
         {
           date: new Date(),
-          credit: 0,
-          debit: 5,
+          credit: 5,
+          debit: 0,
           balance: 5,
         },
         {
           date: new Date(),
-          credit: 0,
-          debit: 10,
+          credit: 10,
+          debit: 0,
           balance: 15,
         },
         {
           date: new Date(),
-          credit: 2,
-          debit: 0,
+          credit: 0,
+          debit: 2,
           balance: 13,
         },
       ];
@@ -73,14 +73,14 @@ describe('BankAccount', () => {
       expect(bankAccount.transactions).toEqual([
         {
           date: new Date(),
-          credit: 0,
-          debit: 10,
+          credit: 10,
+          debit: 0,
           balance: 10,
         },
         {
           date: new Date(),
-          credit: 2,
-          debit: 0,
+          credit: 0,
+          debit: 2,
           balance: 8,
         },
       ]);
