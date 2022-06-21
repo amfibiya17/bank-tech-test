@@ -2,6 +2,7 @@ const timekeeper = require('timekeeper');
 
 const { Printer, timeFormatter, getValue } = require('../src/printer.js');
 const BankAccount = require('../src/bankAccount.js');
+const { time } = require('console');
 
 describe('Printer', () => {
   let bankAccount;
@@ -38,3 +39,11 @@ describe('Printer', () => {
     });
   });
 });
+
+describe('timeFormatter', () => {
+  it('should display date in the right format', () => {
+    const date = new Date('2022-01-10');
+
+    expect(timeFormatter(date)).toEqual('10/01/2022');
+  })
+})
