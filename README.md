@@ -17,7 +17,7 @@ Bank Tech Test
 git clone https://github.com/amfibiya17/bank-tech-test.git
 ```
 
-- Install dependencies:
+- Install dependencies
 ```
 cd bankTechTest
 npm install
@@ -30,24 +30,25 @@ npm install
 ```
 node
 ```
-`<screenshot of node>`
+![node](https://i.postimg.cc/zvvHYTXy/Screenshot-2022-06-21-at-10-31-59.png)
 
 ---
 
 ## Test Coverage
-`<screenshot of jest --coverage>`
+![test coverage](https://i.postimg.cc/ZYGMRHpF/Screenshot-2022-06-21-at-10-24-22.png)
 
 ---
 
 ## Project Structure
-The folder structure of this app is explained below:
+The folder structure of this program is explained below:
 
 | Name | Description |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
 | **node_modules**         | Contains all  npm dependencies |
 | **src**                  | Contains  source code that will be compiled to the dist dir |
-| **src**/index.ts         | Entry point to bank program |
-| package.json             | Contains npm dependencies |
+| **spec**         | Contains all the test files |
+| **package.json**             | Contains npm dependencies |
+| **nodeCheck.md**             | Contains a list of node commands which can be used to manually test the program |
 ---
 
 ## User Stories
@@ -90,13 +91,14 @@ I want my bank statement to include my bank balance
 ---
 
 ## Diagram
-`<screenshot>`
+![diagram](https://i.postimg.cc/3NV9D8kx/Screenshot-2022-06-21-at-10-20-13.png)
 
 ---
 
 ## Trello
 
 https://trello.com/b/8NzhNdDD/bank-tech-test
+
 
 ---
 
