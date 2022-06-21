@@ -29,9 +29,9 @@ class BankAccount {
       debit: amount,
       balance: this.seeAccountBalance() + amount * -1,
     };
-    
+
     if (transaction.balance < 0) {
-      return `There are insufficient funds in your account. Please top up before proceeding. Available to withdraw ${this.seeAccountBalance()}.00.`
+      return `There are insufficient funds in your account. Please top up before proceeding. Available to withdraw ${this.seeAccountBalance()}.00.`;
     }
 
     this.transactions.push(transaction);

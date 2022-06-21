@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+
 class Printer {
   constructor(bankAccount) {
     this.bankAccount = bankAccount;
