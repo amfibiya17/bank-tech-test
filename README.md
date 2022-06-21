@@ -1,5 +1,6 @@
 Bank Tech Test
-===================
+==============
+![](https://img.shields.io/badge/Coverage-100%25-83A603.svg?prefix=$coverage$)  
 
 - this program is able to interact with the code via a REPL (Node)
 - this program allows the user to make a deposit to their bank account
@@ -35,7 +36,7 @@ node
 ---
 
 ## Test Coverage
-![test coverage](https://i.postimg.cc/ZYGMRHpF/Screenshot-2022-06-21-at-10-24-22.png)
+![test coverage](https://i.postimg.cc/W4Vjxr2T/Screenshot-2022-06-21-at-11-18-09.png)
 
 ---
 
@@ -43,12 +44,13 @@ node
 The folder structure of this program is explained below:
 
 | Name | Description |
-| ------------------------ | --------------------------------------------------------------------------------------------- |
-| **node_modules**         | Contains all  npm dependencies |
-| **src**                  | Contains  source code that will be compiled to the dist dir |
-| **spec**         | Contains all the test files |
-| **package.json**             | Contains npm dependencies |
-| **nodeCheck.md**             | Contains a list of node commands which can be used to manually test the program |
+| ---- | ----------- |
+| **node_modules** | Contains all  npm dependencies |
+| **src** | Contains  source code that will be compiled to the dist dir |
+| **spec** | Contains all the test files |
+| **package.json** | Contains npm dependencies |
+| **nodeCheck.md** | Contains a list of node commands which can be used to manually test the program |
+
 ---
 
 ## User Stories
@@ -123,10 +125,10 @@ https://trello.com/b/8NzhNdDD/bank-tech-test
 `When` she prints her bank statement  
 `Then` she would see
 
-| Date | Credit | Debit | Balance |
-| ---- | ------ | ----- | ------- |
-| 14/01/2023 | | 500.00 | 2500.00 |
-| 13/01/2023 | 2000.00 | | 3000.00 |
-| 10/01/2023 | 1000.00 | | 1000.00 |
-
+```
+date || credit || debit || balance  
+14/01/2023 || || 500.00 || 2500.00  
+13/01/2023 || 2000.00 || || 3000.00  
+10/01/2023 || 1000.00 || || 1000.00
+```
 ---
