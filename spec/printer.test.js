@@ -45,5 +45,13 @@ describe('timeFormatter', () => {
     const date = new Date('2022-01-10');
 
     expect(timeFormatter(date)).toEqual('10/01/2022');
-  })
-})
+  });
+});
+
+describe('getValue', () => {
+  it('should return an empty string if value = 0', () => {
+    value = 0;
+
+    expect(getValue(value)).toEqual('');
+  });
+});
